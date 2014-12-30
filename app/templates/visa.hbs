@@ -1,0 +1,29 @@
+<h1>{{name}} deposit</h1>
+
+{{amount-selector amount=model.amount}}
+<div>
+    <label>Card number:</label>
+    <input type="text" maxlength="16" style="width: 360px;" />
+</div>
+<br />
+<div>
+    <select id="expMonth" style="width: 180px;">
+        <option value="">-- choose month --</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+        <option value="06">06</option>
+    </select>
+    <select id="expYear" style="width: 180px;">
+        <option value="">-- choose year --</option>
+        <option value="2014">2014</option>
+        <option value="2015">2015</option>
+        <option value="2016">2016</option>
+        <option value="2017">2017</option>
+    </select>
+</div>
+
+<br />
+<button {{action 'deposit'}}>deposit</button>

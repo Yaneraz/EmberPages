@@ -1,0 +1,11 @@
+<label>Choose your amount:</label>
+{{input value=amount}}
+<div>
+    {{#each amount in predefinedAmounts}}
+      <button {{action "setAmount" amount}} class="btn btn-default btn-sm">
+      {{amount}}
+      </button>
+    {{/each}}
+</div>
+
+<br />

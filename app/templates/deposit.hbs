@@ -1,0 +1,10 @@
+<div class="row padded">
+  <div class="list-group col-xs-3">
+    {{#each model}}
+      {{#link-to 'method' this.name class="list-group-item"}} {{name}} {{/link-to}}
+    {{/each}}
+  </div>
+  <div class="col-xs-9">
+    {{outlet}}
+  </div>
+</div>

@@ -2,7 +2,7 @@
 
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var mergeTrees = require('broccoli-merge-trees');
-var Funnel = require('broccoli-funnel');
+var funnel = require('broccoli-funnel');
 var argv = require('yargs').argv;
 var fs = require('fs');
 
@@ -22,6 +22,19 @@ if (fs.existsSync(brandPath)) {
   var outputTree = mergeTrees(['app', brandPath], {
     overwrite: true
   });
+
+  var templateSrc = funnel(brandPath, {
+    srcDir: 'templates'
+  });
+
+  var templateTree = mergeTrees(['app/templates', templateSrc], {
+    overwrite: true
+  });
+
+  options.trees = {
+    app: outputTree,
+    templates: templateTree
+  };
 
   options.trees = {
     app: outputTree

@@ -35,10 +35,6 @@ if (fs.existsSync(brandPath)) {
     app: outputTree,
     templates: templateTree
   };
-
-  options.trees = {
-    app: outputTree
-  };
 }
 
 var app = new EmberApp(options);
